@@ -19,4 +19,4 @@ Design: [Personal portfolio template](https://colorlib.com/preview/theme/persona
 - all data is pulled from server;
 
 ## Authors
-[Slash](https://github.com/Slashass)
+[Mazvydas](https://github.com/Slashass)
