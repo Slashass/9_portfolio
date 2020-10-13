@@ -5,7 +5,7 @@
 // portfolio gallery
 // our services
 import { servicesData } from './data/services.js';
-import { renderServices } from './components/renderServices.js';
+import { renderServices } from './components/renderServices/renderServices.js';
 // our team
 // achievements
 // pricing
