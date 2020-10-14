@@ -17,32 +17,40 @@ const servicesData = {
         },
         {
             id: 3,
-            icon: 'flaticon-ui',
+            icon: 'flaticon-programming',
             title: 'Web Development',
-            description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
-            active: false
-        },
-        {
-            id: 4,
-            icon: 'flaticon-computer-graphic',
-            title: 'Interface Design',
             description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
             active: true
         },
         {
-            id: 5,
-            icon: 'flaticon-big-data',
-            title: 'Interface Design',
-            description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
-            active: true,
-        },
-        {
-            id: 6,
-            icon: 'flaticon-computer-graphic',
-            title: 'Interface Design',
+            id: 4,
+            icon: 'flaticon-programming',
+            title: 'Malku skaldymas',
             description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
             active: false
         },
+        {
+            id: 5,
+            icon: 'flaticon-smartphone',
+            title: 'Mobile App',
+            description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
+            active: true
+        },
+        {
+            id: 6,
+            icon: 'flaticon-big-data',
+            title: 'Digital Marketing',
+            description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
+            active: true
+        },
+        {
+            id: 7,
+            icon: 'flaticon-store',
+            title: 'Woocommerce',
+            description: 'Continually scale resource-leveling vectors without best-of-breed schemas. Assertively initiate backward-compatible',
+            active: true
+        }
     ]
 }
+
 export { servicesData }

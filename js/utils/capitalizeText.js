@@ -1,6 +1,6 @@
-function capitalizedText(text, onlyFirstLetter = true) {
-    // TODO: pirma raide didzioji
-    return '';
+function capitalizeText(text, onlyFirstLetter = true) {
+    // TODO: pirma raide didzioji kitos mazosios
+    return text;
 }
 
-export { capitalizedText }
+export { capitalizeText }

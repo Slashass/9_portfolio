@@ -15,6 +15,9 @@ function renderServices(params) {
     }
 
     // post logic validation
+    if (HTML === '') {
+        console.error('ERROR: nera nei vienos normalios/validzios paslaugos.')
+    }
 
     // output
     servicesDOM.innerHTML = HTML;

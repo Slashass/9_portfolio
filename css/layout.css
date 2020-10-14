@@ -5,7 +5,7 @@ body {
 
 .container-fluid {
     display: grid;
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 15px 1fr 15px;
     padding: 20px 0;
     border: 1px solid #ccc;
 }
@@ -20,7 +20,7 @@ body {
     .container-fluid > .row,
     .container > .row {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(12, 1fr);
         grid-column: 2/3;
         gap: 30px;
     }
