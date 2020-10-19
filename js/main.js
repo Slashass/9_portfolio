@@ -1,5 +1,7 @@
 
 // header
+import { headerData } from './data/header.js';
+import { RenderHeader } from './components/header/RenderHeader.js';
 // hero
 // about us
 // portfolio gallery
@@ -16,6 +18,7 @@ import { renderServices } from './components/renderServices/renderServices.js';
 // footer
 
 // header
+new RenderHeader(headerData);
 // hero
 // about us
 // portfolio gallery

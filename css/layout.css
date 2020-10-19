@@ -5,7 +5,7 @@ body {
 
 .container-fluid {
     display: grid;
-    grid-template-columns: 15px 1fr 15px;
+    grid-template-columns: 1fr 1200px 1fr;
     padding: 20px 0;
     border: 1px solid #ccc;
 }
