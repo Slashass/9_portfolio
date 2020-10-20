@@ -3,10 +3,11 @@ import { URL } from '../../utils/URL.js';
 class RenderHeader {
     constructor(params) {
         this.selector = params.selector;
+        this.logo = params.logo;
         this.menuLinks = params.menu;
 
         this.DOM = null;
-        this.homeURL = null;
+        this.baseURL = URL.baseURL();
 
         this.init();
     }
@@ -17,6 +18,7 @@ class RenderHeader {
         }
 
         this.render();
+        this.addEvents();
     }
 
     isValidSelector() {
@@ -31,11 +33,11 @@ class RenderHeader {
     generateLogo() {
         if (URL.isHomePage()) {
             // TODO: jei esu Home psl, tai tik nuotrauka
-            return `<img src="#" alt="Xenol project logo">`;
+            return `<img src="${this.baseURL + this.logo}" alt="Xenol project logo">`;
         } else {
             // TODO: jei esu kitame/vidiniame psl, tai nuotrauka nuorodoje
             return `<a href="/">
-                        <img src="#" alt="Xenol project logo">
+                        <img src="${this.baseURL + this.logo}" alt="Xenol project logo">
                     </a>`;
         }
     }
@@ -51,7 +53,12 @@ class RenderHeader {
             if (!this.isValidMenuLink(menuItem)) {
                 continue;
             }
-            HTML += `<a href="http://127.0.0.1:5500/${menuItem.link}">${menuItem.text}</a>`;
+            let url = this.baseURL + menuItem.link;
+            if (url[url.length - 1] !== '/') {
+                url += '/';
+            }
+
+            HTML += `<a href="${url}" class="${location.href === url ? 'active' : ''}">${menuItem.text}</a>`;
         }
         return HTML;
     }
@@ -74,13 +81,34 @@ class RenderHeader {
 
         // output
         return `${this.generateLogo()}
+                <i class="hamburger fa fa-bars"></i>
                 <nav>
                     ${this.generateNav()}
                 </nav>`;
     }
 
     render() {
+        console.log(this.DOM);
         this.DOM.innerHTML = this.generateHTML();
+    }
+
+    addEvents() {
+        // registruojame scroll event listener
+        // priklausomai nuo aukscio, kuriame esu: prideda/atima .scroll klase nuo/ant header elemento
+        addEventListener('scroll', () => {
+            if (scrollY > 100) {
+                this.DOM.closest('header').classList.add('scroll');
+            } else {
+                this.DOM.closest('header').classList.remove('scroll');
+            }
+        })
+
+        // hamburgerio click'ai
+        const hamburger = this.DOM.querySelector('.hamburger');
+        const nav = this.DOM.querySelector('nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('visible');
+        })
     }
 }
 

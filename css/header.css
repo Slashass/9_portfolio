@@ -1,0 +1,85 @@
+header.container-fluid {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    color: #fff;
+    /* TODO: kai atsiras HERO, pasalinti sita fono spalva */
+    background-color: #3366ff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    transition: all 0.5s;
+}
+    header.container-fluid + * {
+        padding-top: 190px;
+    }
+    header.container-fluid.scroll {
+        background-color: #00336688;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    header img {
+        display: inline-block;
+        float: left;
+    }
+    header .hamburger {
+        display: none;
+        float: right;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    header nav {
+        display: inline-block;
+        float: right;
+    }
+        header nav > a {
+            display: inline-block;
+            float: left;
+            margin-left: 20px;
+            padding-bottom: 10px;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+        }
+            header nav > a::after {
+                display: inline-block;
+                content: '';
+                height: 1px;
+                background-color: #fff;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                right: 50%;
+                transition: all 0.2s;
+            }
+            header nav > a:hover::after {
+                left: 0;
+                right: 0;
+            }
+        header nav > a.active::after {
+            left: 0;
+            right: 0;
+        }
+
+@media (max-width: 700px) {
+    header .hamburger {
+        display: inline-block;
+    }
+    header nav {
+        display: none;
+    }
+        header nav.visible {
+            display: block;
+            margin-top: 40px;
+            text-align: center;
+        }
+            header nav.visible > a {
+                width: 100%;
+            }
+            header nav > a::after {
+                display: none;
+            }
+}

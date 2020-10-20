@@ -1,31 +1,28 @@
 class URL {
     constructor() {
-        this.githubPathname = '/18a-grupe-portfolio/';
-        this.DOMAINS = [
-            '127.0.0.1',
-            'localhost',
-            'front-end-by-rimantas.github.io'
-        ];
         this.domain = location.hostname;
     }
 
     /**
-     * @returns grazina githubo pathname
+     * @returns Pirma URL kelio sudadamoji dalis, kuri eina tiesiai po DOMAIN dalies Github'e
      */
-
     static githubPathname() {
         return '/18a-grupe-portfolio/';
-    };
+    }
+
     /**
-     * @returns sarasas galimu DOMAIN daliu, kiek localpath tiek github
+     * @returns Sarasas galimu DOMAIN daliu, t.y. tiek local, tiek Github.
      */
     static DOMAINS() {
-        return '127.0.0.1',
+        return [
+            '127.0.0.1',
             'localhost',
             'front-end-by-rimantas.github.io'
-    };
+        ];
+    }
+
     /**
-     * @returns grazina pilna kelia pagrindines URL dalies... protocolas+domain+port(jei yra), bei jei iskvieciama githube, tai prie grazamo URL yra pridetas projekto kelias
+     * @returns Grazina pilna kelia pagrindines URL dalies, t.y. protocol + domain + port (jei yra), bei jei iskviecia Github'e, tai prie grazinamo URL yra pridetas projekto kelias.
      */
     static baseURL() {
         let url = location.origin;
@@ -34,12 +31,12 @@ class URL {
             url += URL.githubPathname();
         }
 
+        return url + '/';
     }
 
-    fullURL(path) {
-        // return protocol + domain + path;
-    }
-
+    /**
+     * @returns {boolean} Grazina ar esame "home" puslapyje
+     */
     static isHomePage() {
         const domain = location.hostname;
 
@@ -56,6 +53,10 @@ class URL {
             }
         }
         return false;
+    }
+
+    fullURL(path) {
+        // return protocol + domain + path;
     }
 }
 
